@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.5.3/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.5.3/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
@@ -19,5 +19,5 @@ sed -i 's/192.168.1.1/192.168.5.3/g' package/base-files/files/bin/config_generat
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-git clone https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
-git clone https://github.com/morytyann/OpenWrt-mihomo.git package/mihomo
+#git clone https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
+#git clone https://github.com/morytyann/OpenWrt-mihomo.git package/mihomo
