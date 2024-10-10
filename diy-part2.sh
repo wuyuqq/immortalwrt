@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.5.3/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.5.2/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
@@ -19,5 +19,21 @@
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-#git clone https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
-#git clone https://github.com/morytyann/OpenWrt-mihomo.git package/mihomo
+# Add luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+
+# 全能推送
+git clone https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
+
+# Mihomo TProxy
+git clone https://github.com/morytyann/OpenWrt-mihomo.git package/mihomo
+
+# 调整 netdata 到 状态 菜单
+sed -i 's/"system"/"status"/g' feeds/luci/applications/luci-app-netdata/luasrc/controller/*.lua
+
+# 调整 filebrowser 到 系统 菜单
+sed -i 's/services/system/g' feeds/luci/applications/luci-app-filebrowser/root/usr/share/luci/menu.d/*.json
+
+# 调整 nlbwmon 到 一级 菜单
+sed -i 's/services\///g' feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/*.json
