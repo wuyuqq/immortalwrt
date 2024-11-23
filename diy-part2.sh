@@ -27,7 +27,7 @@ sed -i 's/192.168.1.1/192.168.5.2/g' package/base-files/files/bin/config_generat
 git clone https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
 
 # Mihomo TProxy
-#git clone https://github.com/morytyann/OpenWrt-mihomo.git package/mihomo
+git clone https://github.com/morytyann/OpenWrt-mihomo.git package/mihomo
 
 # 调整 netdata 到 状态 菜单
 sed -i 's/"system"/"status"/g' feeds/luci/applications/luci-app-netdata/luasrc/controller/*.lua
